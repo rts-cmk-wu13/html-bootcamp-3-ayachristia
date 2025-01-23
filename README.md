@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/DMr4F_td)
+
 # HTML Bootcamp #3
 
 I denne opgave skal du arbejde med tilgængelighed (accessibility, a11y).
@@ -6,6 +7,8 @@ I denne opgave skal du arbejde med tilgængelighed (accessibility, a11y).
 Tilgængelighed er til for at hjælpe brugere med nedsat evne at navigere og bruge din hjemmeside eller applikation. Specifikationen for tilgængelighed hedder `WAI-ARIA` og er en web-standard, der vedligeholdes og udvikles af W3C. Det er blandt andet denne specifikation, som bestemmer at et `img`-tag skal have en `alt`-attribut.
 
 Kan du forklare hvorfor der skal være en `alt`-attribut på et `img`-tag? Skriv dit svar herunder.
+
+> > et image tag skal have en alt attribut således at skærmlæseren kan fortælle brugeren hvad img består af som ikke kan ses. For bedre forståelse og oplevelse af indhold <<
 
 ## WAI-ARIA
 
@@ -16,31 +19,39 @@ https://www.w3.org/WAI/standards-guidelines/aria/
 WAI-ARIA implementeres i HTML som attributter på tags, for eksempel:
 
 ```html
-<button aria-controls="primaryNavigation" aria-describedby="message-menu-button">Menu</button>
+<button
+  aria-controls="primaryNavigation"
+  aria-describedby="message-menu-button"
+>
+  Menu
+</button>
 <nav id="primaryNavigation" aria-hidden="true">
-	<ul>
-		<li><a href="#!/forside">Forside</a></li>
-		<li><a href="#!/produkter">Produkter</a></li>
-		<li><a href="#!/historie">Historie</a></li>
-		<li><a href="#!/kontakt">Kontakt</a></li>
-	</ul>
+  <ul>
+    <li><a href="#!/forside">Forside</a></li>
+    <li><a href="#!/produkter">Produkter</a></li>
+    <li><a href="#!/historie">Historie</a></li>
+    <li><a href="#!/kontakt">Kontakt</a></li>
+  </ul>
 </nav>
 
 <div hidden>
-	<span id="message-menu-button">Klik her for at vise menuen</span>
+  <span id="message-menu-button">Klik her for at vise menuen</span>
 </div>
 ```
 
 I ovenstående eksempel bliver en bruger gjort opmærksom på følgende:
-* Der er en knap, som har til opgave at styre et andet objekt (nav-objektet)
-* `nav`-objektet har et `landmark`, som fortæller en bruger hvad formålet med objektet er (role="navigation")
-* Brugeren bliver gjort opmærksom på, at `nav`-objektet som udgangspunkt er skjult. Det vil sige, at en skærmlæser, for eksempel, vil ignorere dette objekt
-* Brugeren for at vide, hvad der vil ske, nå hun klikker på knappen
+
+- Der er en knap, som har til opgave at styre et andet objekt (nav-objektet)
+- `nav`-objektet har et `landmark`, som fortæller en bruger hvad formålet med objektet er (role="navigation")
+- Brugeren bliver gjort opmærksom på, at `nav`-objektet som udgangspunkt er skjult. Det vil sige, at en skærmlæser, for eksempel, vil ignorere dette objekt
+- Brugeren for at vide, hvad der vil ske, nå hun klikker på knappen
 
 ## Opgave
+
 I filen [index.html](index.html), mangler alle de overordnede semantiske tags.
 
 Du skal rette filen til, så den bliver semantisk korrekt og du skal tilføje tilgængeligheds-attributter, så filen er lettere at bruge for folk med nedsat evne.
 
 ### Aflevering
+
 Du skal aflevere på GitHub gennem en pull-request. Husk at pushe ofte.
